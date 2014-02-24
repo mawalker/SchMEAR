@@ -6,40 +6,43 @@ To use this project creator you will need these tools:
 
 *   JDK 7 (OpenJDK appears to work fine)
 
-*   Eclipse
-
 *   Maven 3.1
 
-I Am Working on an archetype for maven, which will allow you to make a easily usable project out of the box.
+*   Eclipse (This is actually Optional, but the pom file that will be created will allow easy import of the project into Eclipse if it has the maven plugin.)
 
-Until then... 
+  
+I have a single archetype created that will provide you everything you will need, including: 
+*   pom.xml 
+*   folder structure
+*   library-dependencies
+*   example code
 
-edit this command: (change 'com.mycompany.app' and 'my-app' to appropriate values)
+To Install this maven archetype to your local repository (because I haven't yet published this to a public repository), You need to go to the directory **archetypes/base-rest/** and run:
+
+    mvn install
+
+This will allow you to be able to make use of the SchMEAR-base-rest archetype.
+
+This will allow you to run the following command where you wish your new project to be created. You need to edit the command to include the proper groupID (CompanyName/PackageName), and artifactID (ProjectName):
+
+
 ```
-mvn archetype:generate \
--DgroupId=com.mycompany.app \
--DartifactId=my-app \
--DarchetypeGroupId=com.google.appengine.archetypes \
--DarchetypeArtifactId=skeleton-archetype \
--DinteractiveMode=false
-```
+    mvn archetype:generate                      \
+      -DarchetypeGroupId=edu.vu.isis            \
+      -DarchetypeArtifactId=schmear-base-rest   \
+      -DarchetypeVersion=1.0-SNAPSHOT           \
+      -DinteractiveMode=false                   \
+      -DgroupId=<com.mycompany.app>             \
+      -DartifactId=<my-app>
+``` 
 
-and paste it into your linux machine's terminal (the '\' make this all a single line command) and run it. You will now have a working starter project, but it will be lacking lots of features you'll need. 
 
-However, the project created doesn't provide every dependency that you would want to use. Specifically Spring is not included at all. Therefore you can copy/paste the non-specific portions of the pom.xml included alongside this README.md to achieve a project that will have the appropriate configuration.
 
-Things to change from provided pom file:
-*   lines 9 and 10 will have to be changed to match your chosen values
-*   line 12 The entire '<developers>' section will need to changed
-*   line 370 will need to be changed to the package you keep your 'domain' objects (which means where you keep your POJO files, that will represent how your data is stored into noSQL tables for you. (examine the sample projects included in this repo)).
-*   Also, the /src/main/webapp/WEB-INF/dispatcher-servlet.xml will need to change to point to the package where your Spring Controllers (will) live.
+and paste it into your linux machine's terminal (the '\' makes this all a single line command) and run it. You will now have a working starter project.
 
-This longer pom file, is done as well as I could to show 'best practices' when making a larger complex single pom file.
-pom files (which is what maven uses to build your application) can become very complex, until you become famaliar with maven more in depth, with heirarchies of pom files, parental referencing, etc. This pom should provide all the features you need for now. Listed below is a short list of the commands you could be inerested in, with explanations.
+The starter project will have a single Spring controller, domain object, and a repository. If you start the Google App Engine dev-server the following link will allow you to view the REST information it displays
 
-----
-
-Eventually the copying of POM files will not be required, and we'll have a couple generation options, but for now, thats what we have. 
+[http://localhost:8080/v1/stories/](http://localhost:8080/v1/stories/)
 
 ----
 
