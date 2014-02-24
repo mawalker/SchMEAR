@@ -14,7 +14,7 @@ I Am Working on an archetype for maven, which will allow you to make a easily us
 
 Until then... 
 
-edit this command: (change <com.mycompany.app> and <my-app> to appropriate values)
+edit this command: (change 'com.mycompany.app' and 'my-app' to appropriate values)
 ```
 mvn archetype:generate \
 -DgroupId=com.mycompany.app \
