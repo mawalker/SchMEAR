@@ -1,4 +1,7 @@
-package edu.vu.isis;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.controllers;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import ${package}.repository.SimpleDataStorage;
+import ${package}.domain.StoryData;
 
 @Controller
 @RequestMapping("/v1/")

@@ -3,41 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
-
-	<groupId>com.walkernation</groupId>
-	<artifactId>testapp</artifactId>
-
-	<developers>
-		<developer>
-			<id>mwalker</id>
-			<name>Michael A. Walker</name>
-			<email>mwalker@isis.vanderbilt.edu</email>
-			<organization>Vanderbilt University: Institute for Software Integrated Systems</organization>
-			<organizationUrl>http://www.isis.vanderbilt.edu</organizationUrl>
-			<roles>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-			<timezone>-6</timezone>
-		</developer>
-		<developer>
-			<id>violettav</id>
-			<name>Violetta Vylegzhanina</name>
-			<email>violetta.vylegzhanina@vanderbilt.edu</email>
-			<organization>Vanderbilt University: Institute for Software Integrated Systems</organization>
-			<organizationUrl>http://www.isis.vanderbilt.edu</organizationUrl>
-			<roles>
-				<role>developer</role>
-			</roles>
-			<timezone>-6</timezone>
-		</developer>
-	</developers>
+	<version>${version}</version>
 
 	<!-- Properties availabe to the rest of pom file -->
 	<properties>
 
+		<domain-jdo-objects-location>${packageInPathFormat}/domain/</domain-jdo-objects-location>
+	
 		<!-- Project Properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -367,7 +343,7 @@
 				<version>${maven-datanucleus-plugin-version}</version>
 				<configuration>
 					<fork>false</fork>
-					<mappingIncludes>/com/walkernation/rest/domain/*.class</mappingIncludes>
+					<mappingIncludes>${domain-jdo-objects-location}*.class</mappingIncludes>
 					<verbose>true</verbose>
 					<enhancerName>ASM</enhancerName>
 					<api>JDO</api>

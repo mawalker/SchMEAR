@@ -1,4 +1,7 @@
-package edu.vu.isis;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import ${package}.controllers.StoryDataControllerV1;
+import ${package}.domain.StoryData;
 
 public class SimpleDataStorage {
 

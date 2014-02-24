@@ -1,4 +1,4 @@
-package edu.vu.isis;
+package edu.vu.isis.domain;
 
 import java.util.UUID;
 
