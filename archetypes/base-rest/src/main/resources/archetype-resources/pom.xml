@@ -3,54 +3,56 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>${groupId}</groupId>
-	<artifactId>${artifactId}</artifactId>
+
+	<groupId>\${groupId}</groupId>
+	<artifactId>\${artifactId}</artifactId>
 	<packaging>war</packaging>
-	<version>${version}</version>
+	<version>\${version}</version>
 
 	<!-- Properties availabe to the rest of pom file -->
 	<properties>
 
-		<domain-jdo-objects-location>${packageInPathFormat}/domain/</domain-jdo-objects-location>
-	
+		<domain-jdo-objects-location>\${packageInPathFormat}/domain/</domain-jdo-objects-location>
+
 		<!-- Project Properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Dependency Versions -->
-		<appengine.app.version>1</appengine.app.version>
-		<appengine.target.version>1.8.9</appengine.target.version>
-		<spring.version>4.0.1.RELEASE</spring.version>
-		<jackson.version>2.2.3</jackson.version>
-		<servlet-api-version>2.5</servlet-api-version>
-		<jstl-version>1.2</jstl-version>
-		<junit-version>4.11</junit-version>
-		<mockito-version>1.9.0</mockito-version>
-		<jdo-api-version>3.0.1</jdo-api-version>
-		<jsr107cache-version>1.1</jsr107cache-version>
-		<datanucleus-appengine-version>2.1.2</datanucleus-appengine-version>
-		<datanucleus-api-jdo-version>3.1.3</datanucleus-api-jdo-version>
-		<commons-io-version>2.4</commons-io-version>
-		<guava-version>16.0.1</guava-version>
-		<guava-collections-version>r03</guava-collections-version>
-		<guava-base-version>r03</guava-base-version>
-		<guava-parent-version>16.0.1</guava-parent-version>
-		<guice-version>3.0</guice-version>
-		<guice-multibindings-version>3.0</guice-multibindings-version>
-		<gmultipart-version>0.4</gmultipart-version>
-		<joda-time-version>2.3</joda-time-version>
-		<persistence-api-version>1.0.2</persistence-api-version>
-		<datanucleus-jodatime-version>3.2.1</datanucleus-jodatime-version>
+		<!-- These versions are tested to work together -->
+		<!-- Versions are imported at time of archtype generation from 'parent-pom' -->
+		<appengine.app.version>${appengine.app.version}</appengine.app.version>
+		<appengine.target.version>${appengine.target.version}</appengine.target.version>
+		<spring.version>${spring.version}</spring.version>
+		<jackson.version>${jackson.version}</jackson.version>
+		<servlet-api-version>${servlet-api-version}</servlet-api-version>
+		<jstl-version>${jstl-version}</jstl-version>
+		<junit-version>${junit-version}</junit-version>
+		<mockito-version>${mockito-version}</mockito-version>
+		<jdo-api-version>${jdo-api-version}</jdo-api-version>
+		<jsr107cache-version>${jsr107cache-version}</jsr107cache-version>
+		<datanucleus-appengine-version>${datanucleus-appengine-version}</datanucleus-appengine-version>
+		<datanucleus-api-jdo-version>${datanucleus-api-jdo-version}</datanucleus-api-jdo-version>
+		<commons-io-version>${commons-io-version}</commons-io-version>
+		<guava-version>${guava-version}</guava-version>
+		<guava-collections-version>${guava-collections-version}</guava-collections-version>
+		<guava-base-version>${guava-base-version}</guava-base-version>
+		<guava-parent-version>${guava-parent-version}</guava-parent-version>
+		<guice-version>${guice-version}</guice-version>
+		<guice-multibindings-version>${guice-multibindings-version}</guice-multibindings-version>
+		<gmultipart-version>${gmultipart-version}</gmultipart-version>
+		<joda-time-version>${joda-time-version}</joda-time-version>
+		<persistence-api-version>${persistence-api-version}</persistence-api-version>
+		<datanucleus-jodatime-version>${datanucleus-jodatime-version}</datanucleus-jodatime-version>
 
 		<!-- Plugin Versions -->
-		<maven-war-plugin-version>2.3</maven-war-plugin-version>
-		<maven-datanucleus-plugin-version>3.1.3</maven-datanucleus-plugin-version>
-		<maven-surefire-plugin-version>2.16</maven-surefire-plugin-version>
-		<datanucleus-core-version>3.1.3</datanucleus-core-version>
+		<maven-war-plugin-version>${maven-war-plugin-version}</maven-war-plugin-version>
+		<maven-datanucleus-plugin-version>${maven-datanucleus-plugin-version}</maven-datanucleus-plugin-version>
+		<maven-surefire-plugin-version>${maven-surefire-plugin-version}</maven-surefire-plugin-version>
+		<datanucleus-core-version>${datanucleus-core-version}</datanucleus-core-version>
 
 		<!-- Plugin Management Versions -->
-		<org-eclipse-m2e-lifecycle-mapping-version>1.0.0</org-eclipse-m2e-lifecycle-mapping-version>
-		<maven-datanucleus-plugin-version>3.1.3</maven-datanucleus-plugin-version>
+		<org-eclipse-m2e-lifecycle-mapping-version>${org-eclipse-m2e-lifecycle-mapping-version}</org-eclipse-m2e-lifecycle-mapping-version>
+		<maven-datanucleus-plugin-version>${maven-datanucleus-plugin-version}</maven-datanucleus-plugin-version>
 	</properties>
 
 	<repositories>
@@ -66,20 +68,20 @@
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-1.0-sdk</artifactId>
-			<version>${appengine.target.version}</version>
+			<version>\${appengine.target.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>${servlet-api-version}</version>
+			<version>\${servlet-api-version}</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
-			<version>${jstl-version}</version>
+			<version>\${jstl-version}</version>
 		</dependency>
 
 		<!-- Test Dependencies -->
@@ -87,21 +89,21 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit-version}</version>
+			<version>\${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
-			<version>${mockito-version}</version>
+			<version>\${mockito-version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -110,13 +112,13 @@
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-testing</artifactId>
-			<version>${appengine.target.version}</version>
+			<version>\${appengine.target.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-stubs</artifactId>
-			<version>${appengine.target.version}</version>
+			<version>\${appengine.target.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -126,17 +128,17 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
+			<version>\${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
+			<version>\${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>${jackson.version}</version>
+			<version>\${jackson.version}</version>
 		</dependency>
 
 		<!-- datastore related -->
@@ -144,19 +146,19 @@
 		<dependency>
 			<groupId>javax.jdo</groupId>
 			<artifactId>jdo-api</artifactId>
-			<version>${jdo-api-version}</version>
+			<version>\${jdo-api-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>net.sf.jsr107cache</groupId>
 			<artifactId>jsr107cache</artifactId>
-			<version>${jsr107cache-version}</version>
+			<version>\${jsr107cache-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.appengine.orm</groupId>
 			<artifactId>datanucleus-appengine</artifactId>
-			<version>${datanucleus-appengine-version}</version>
+			<version>\${datanucleus-appengine-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.datanucleus</groupId>
@@ -168,7 +170,7 @@
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>datanucleus-api-jdo</artifactId>
-			<version>${datanucleus-api-jdo-version}</version>
+			<version>\${datanucleus-api-jdo-version}</version>
 		</dependency>
 
 		<!-- Spring persistence related -->
@@ -176,13 +178,13 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>${commons-io-version}</version>
+			<version>\${commons-io-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.inject.extensions</groupId>
 			<artifactId>guice-multibindings</artifactId>
-			<version>${guice-multibindings-version}</version>
+			<version>\${guice-multibindings-version}</version>
 		</dependency>
 
 		<!-- Spring Dependencies -->
@@ -190,49 +192,49 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
+			<version>\${spring.version}</version>
 		</dependency>
 
 		<!-- other misc dependencies -->
@@ -240,62 +242,62 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>${guava-version}</version>
+			<version>\${guava-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava-collections</artifactId>
-			<version>${guava-collections-version}</version>
+			<version>\${guava-collections-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>${guice-version}</version>
+			<version>\${guice-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>gmultipart</groupId>
 			<artifactId>gmultipart</artifactId>
-			<version>${gmultipart-version}</version>
+			<version>\${gmultipart-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava-base</artifactId>
-			<version>${guava-base-version}</version>
+			<version>\${guava-base-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava-parent</artifactId>
-			<version>${guava-parent-version}</version>
+			<version>\${guava-parent-version}</version>
 			<type>pom</type>
 		</dependency>
 
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
-			<version>${joda-time-version}</version>
+			<version>\${joda-time-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
-			<version>${persistence-api-version}</version>
+			<version>\${persistence-api-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>datanucleus-jodatime</artifactId>
-			<version>${datanucleus-jodatime-version}</version>
+			<version>\${datanucleus-jodatime-version}</version>
 		</dependency>
 
 	</dependencies>
 
 	<build>
-		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+		<outputDirectory>\${project.build.directory}/\${project.build.finalName}/WEB-INF/classes</outputDirectory>
 		<plugins>
 
 			<!-- maven compiler -->
@@ -313,13 +315,13 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>${maven-war-plugin-version}</version>
+				<version>\${maven-war-plugin-version}</version>
 				<configuration>
 					<archiveClasses>true</archiveClasses>
 					<webResources>
 						<!-- in order to interpolate version from pom into appengine-web.xml -->
 						<resource>
-							<directory>${basedir}/src/main/webapp/WEB-INF</directory>
+							<directory>\${basedir}/src/main/webapp/WEB-INF</directory>
 							<filtering>true</filtering>
 							<targetPath>WEB-INF</targetPath>
 						</resource>
@@ -331,7 +333,7 @@
 			<plugin>
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
-				<version>${appengine.target.version}</version>
+				<version>\${appengine.target.version}</version>
 				<!-- <configuration> <jvmFlags> <jvmFlag>-Xdebug</jvmFlag> <jvmFlag>-Xrunjdwp:transport=dt_socket,address=1044,server=y,suspend=y 
 					</jvmFlag> </jvmFlags> <disableUpdateCheck>true</disableUpdateCheck> </configuration> -->
 			</plugin>
@@ -340,10 +342,10 @@
 			<plugin>
 				<groupId>org.datanucleus</groupId>
 				<artifactId>maven-datanucleus-plugin</artifactId>
-				<version>${maven-datanucleus-plugin-version}</version>
+				<version>\${maven-datanucleus-plugin-version}</version>
 				<configuration>
 					<fork>false</fork>
-					<mappingIncludes>${domain-jdo-objects-location}*.class</mappingIncludes>
+					<mappingIncludes>\${domain-jdo-objects-location}*.class</mappingIncludes>
 					<verbose>true</verbose>
 					<enhancerName>ASM</enhancerName>
 					<api>JDO</api>
@@ -352,7 +354,7 @@
 					<dependency>
 						<groupId>org.datanucleus</groupId>
 						<artifactId>datanucleus-core</artifactId>
-						<version>${datanucleus-core-version}</version>
+						<version>\${datanucleus-core-version}</version>
 					</dependency>
 				</dependencies>
 				<executions>
@@ -370,7 +372,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven-surefire-plugin-version}</version>
+				<version>\${maven-surefire-plugin-version}</version>
 				<configuration>
 					<excludes>
 						<exclude>**/*IntegrationTest.java</exclude>
@@ -405,7 +407,7 @@
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
-					<version>${org-eclipse-m2e-lifecycle-mapping-version}</version>
+					<version>\${org-eclipse-m2e-lifecycle-mapping-version}</version>
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
@@ -413,7 +415,7 @@
 									<pluginExecutionFilter>
 										<groupId>org.datanucleus</groupId>
 										<artifactId>maven-datanucleus-plugin</artifactId>
-										<versionRange>${maven-datanucleus-plugin-version}</versionRange>
+										<versionRange>\${maven-datanucleus-plugin-version}</versionRange>
 										<goals>
 											<goal>enhance</goal>
 										</goals>
