@@ -1,6 +1,15 @@
-#SchMEAR is a Web Server Project creator for: _S_pring, _M_aven, _E_clipse, google _A_pp engine, and _R_.e.s.t.
+# SchMEAR is a Web Server Project creator for: 
+* S-pring,
+* M-aven,
+* E-clipse,
+* A-pp engine, and
+* R-.e.s.t. 
 
-This 'guide' is for your benefit only for now, is not complete, but might help you out a lot for now, I plan on improving this dramatically here soon. 
+---
+
+This 'guide' is for your benefit only, is not complete, but might help you out for now.
+
+Future updates to this will include a version that makes use of JDO for persistence(Database) access.
 
 To use this project creator you will need these tools:
 
@@ -40,9 +49,7 @@ This will allow you to run the following command where you wish your new project
 
 and paste it into your linux machine's terminal (the '\' makes this all a single line command) and run it. You will now have a working starter project.
 
-The starter project will have a single Spring controller, domain object, and a repository. If you start the Google App Engine dev-server the following link will allow you to view the REST information it displays
-
-[http://localhost:8080/v1/stories/](http://localhost:8080/v1/stories/)
+The starter project will use maven for building & testing and will have a single Spring controller, domain object, and a repository(where you put your persistence related code). 
 
 ----
 
@@ -68,6 +75,10 @@ Building and running all the IntegrationTests (This is not yet implemented, so i
 To test the app on a local webserver instance:
 
     mvn appengine:devserver
+    
+the following link will allow you to view the REST information it displays
+
+[http://localhost:8080/v1/stories/](http://localhost:8080/v1/stories/) (note it will be empty at first, and after every 'mvn clean')
 
 To test the app on a local webserver instance: (and run in the background, non-blocking):
 
